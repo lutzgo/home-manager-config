@@ -134,15 +134,16 @@
             };
           };
 
-          "nakulaptop.ireen" = HomeConfiguration {
+          "flores.ireen" = HomeConfiguration {
             extraSpecialArgs = {
               org = "toi";
               role = "workstation";
-              hostname = "nakulaptop";
+              hostname = "flores";
               username = "ireen";
-              displays = 1;
+              displays = 2;
               display_center = "eDP";
-              networkInterface = "wlo1";
+	      display_right = "HDMI-A-O";
+              networkInterface = "wlp0s20f3";
               inherit inputs outputs;
             };
           };
