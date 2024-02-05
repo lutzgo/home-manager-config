@@ -10,7 +10,7 @@ with lib; {
         home = {
           applications = {
             autotiling.enable = true;
-            dunst.enable = true;
+            #dunst.enable = true;
             i3status-rust.enable = true;
             rofi.enable = true;
           };
@@ -271,10 +271,10 @@ with lib; {
               command = "autotiling";
               always = true;
             } # Auto Tile H/V
-            {
-              command = "dunst";
-              always = false;
-            } # Notification Manager
+            #{
+            #  command = "dunst";
+            #  always = false;
+            #} # Notification Manager
             {
               command = "opensnitch-ui --background";
               always = false;

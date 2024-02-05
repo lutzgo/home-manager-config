@@ -12,7 +12,7 @@ in
         applications = {
           cliphist.enable = true;
           grim.enable = true;
-          hyprpaper.enable = true;
+          #hyprpaper.enable = true;
           nwg-displays.enable = true;
           slurp.enable = true;
           sway-notification-center.enable = true;
