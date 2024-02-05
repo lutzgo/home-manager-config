@@ -88,7 +88,7 @@
               org = "toi";
               role = "workstation";
               hostname = "flores";
-              username = "ireen";
+              username = "sgo";
               displays = 2;
               display_center = "eDP";
 	            display_right = "HDMI-A-O";
