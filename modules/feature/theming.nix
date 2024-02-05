@@ -21,7 +21,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    colorscheme = inputs.nix-colors.colorSchemes.dracula;
+    colorscheme = inputs.nix-colors.colorSchemes.catppuccin-latte;
     gtk = mkIf ((username == "lgo" || username == "media") && ( role == "workstation")) {
       enable = true;
       iconTheme = {

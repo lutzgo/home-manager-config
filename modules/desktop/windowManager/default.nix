@@ -3,7 +3,8 @@
 with lib;
 {
   imports = [
-    ./hyprland
+    ./gnome
+		./hyprland
 		./sweetHyprland
   ];
 }
