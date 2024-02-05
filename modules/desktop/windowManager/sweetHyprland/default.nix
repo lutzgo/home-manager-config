@@ -34,7 +34,7 @@ with lib;
     inputs.hyprland.homeManagerModules.default
   ];
 
-  config = mkIf (config.host.home.feature.gui.enable && displayServer == "wayland" && windowManager == "hyprland") {
+  config = mkIf (config.host.home.feature.gui.enable && displayServer == "wayland" && windowManager == "sweetHyprland") {
     home = {
       packages = with pkgs;
         [
@@ -53,7 +53,7 @@ with lib;
       };
     };
 
-    wayland.windowManager.hyprland = {
+    wayland.windowManager.sweetHyprland = {
       enable = true;
       xwayland.enable = true;
       extraConfig = ''
