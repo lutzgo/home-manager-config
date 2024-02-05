@@ -18,7 +18,7 @@
         gui = {
           enable = true;
           displayServer = "wayland";
-					windowManager = "sweetHyprland";
+					windowManager = "hyprland";
         };
         theming.enable = true;
       };
