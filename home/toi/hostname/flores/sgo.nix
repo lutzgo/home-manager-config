@@ -18,9 +18,9 @@
         gui = {
           enable = true;
           displayServer = "wayland";
-          rice = "sweetHyprland";
+					windowManager = "sweetHyprland";
         };
-        #theming.enable = false;
+        theming.enable = true;
       };
       service = {
         decrypt_encfs_workspace.enable = false;

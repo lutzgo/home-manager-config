@@ -28,15 +28,9 @@ with lib;
       };
 
       windowManager = mkOption {
-        type = types.enum ["cinnamon" "hyprland" "i3" "sway" ];
+        type = types.enum ["hyprland" "sweetHyprland" ];
         default = null;
         description = "Type of window manager (yes, I know some are desktop environments)";
-      };
-      
-			rice = mkOption {
-        type = types.enum ["sweetHyprland" ];
-        default = null;
-        description = "Choose your rice according to taste";
       };
     };
   };
