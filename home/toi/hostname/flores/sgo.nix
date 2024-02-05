@@ -17,8 +17,8 @@
       feature = {
         gui = {
           enable = true;
-          displayServer = "x";
-          windowManager = "cinnamon";
+          displayServer = "wayland";
+          windowManager = "hyprland";
         };
         #theming.enable = false;
       };
