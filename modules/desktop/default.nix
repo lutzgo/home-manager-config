@@ -10,6 +10,7 @@ with lib;
     ./apps
     ./displayServer
     ./windowManager
+		./rice
   ];
 
   options = {
@@ -30,6 +31,12 @@ with lib;
         type = types.enum ["cinnamon" "hyprland" "i3" "sway" ];
         default = null;
         description = "Type of window manager (yes, I know some are desktop environments)";
+      };
+      
+			rice = mkOption {
+        type = types.enum ["sweet-hyprland" ];
+        default = null;
+        description = "Choose your rice according to taste";
       };
     };
   };
