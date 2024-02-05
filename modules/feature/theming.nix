@@ -22,7 +22,7 @@ in
 
   config = mkIf cfg.enable {
     colorscheme = inputs.nix-colors.colorSchemes.dracula;
-    gtk = mkIf ((username == "dave" || username == "media") && ( role == "workstation")) {
+    gtk = mkIf ((username == "lgo" || username == "media") && ( role == "workstation")) {
       enable = true;
       iconTheme = {
         name = "Papirus";
@@ -34,20 +34,20 @@ in
       };
     };
 
-    home = mkIf ((username == "dave" || username == "media") && ( role == "workstation")) {
+    home = mkIf ((username == "lgo" || username == "media") && ( role == "workstation")) {
       packages = with pkgs;
         [
           lxappearance
         ];
 
-      pointerCursor = mkIf ((username == "dave" || username == "media") && ( role == "workstation")) {
+      pointerCursor = mkIf ((username == "lgo" || username == "media") && ( role == "workstation")) {
         gtk.enable = true;
         name = "Quintom_Snow";
         package = pkgs.quintom-cursor-theme;
       };
     };
 
-    programs = mkIf ((username == "dave" || username == "media") && ( role == "workstation")) {
+    programs = mkIf ((username == "lgo" || username == "media") && ( role == "workstation")) {
       bash = {
         sessionVariables = {
           GTK2_RC_FILES = "$XDG_CONFIG_HOME/gtk-2.0/gtkrc";
