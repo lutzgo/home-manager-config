@@ -60,8 +60,8 @@
   outputs = { self, nixpkgs, flake-utils, home-manager, ... }@inputs:
     let
       inherit (self) outputs;
-      gn = "dave";
-      gnsn = "daveconroy";
+      gn = "lgo";
+      gnsn = "lutzgo";
 
       pkgsForSystem = system: import nixpkgs {
         overlays = [
@@ -89,11 +89,11 @@
         homeConfigurations = {
           "flores.sgo" = HomeConfiguration {
             extraSpecialArgs = {
-              org = "toi";
+              org = "go";
               role = "workstation";
               hostname = "flores";
               username = "sgo";
-              displays = 2;
+              displays = 1;
               display_center = "eDP";
 	            display_right = "HDMI-A-O";
               networkInterface = "wlp0s20f3";
