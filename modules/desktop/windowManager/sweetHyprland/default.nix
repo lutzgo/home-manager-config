@@ -2,7 +2,6 @@
 let
   displayServer = config.host.home.feature.gui.displayServer ;
   windowManager = config.host.home.feature.gui.windowManager ;
-  rice = config.host.home.feature.gui.rice ;
 
   gameMode = pkgs.writeShellScriptBin "gamemode" ''
     HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==2{print $2}')
@@ -33,11 +32,27 @@ with lib;
 {
   imports = [
     inputs.hyprland.homeManagerModules.default
-
-		./ags
   ];
 
-  config = mkIf (config.host.home.feature.gui.enable && displayServer == "wayland" && rice == "sweetHyprland") {
+  config = mkIf (config.host.home.feature.gui.enable && displayServer == "wayland" && windowManager == "hyprland") {
+    home = {
+      packages = with pkgs;
+        [
+          gameMode
+          #hyprland-share-picker     # If this works outside of Hyprland modularize
+        ];
+    };
+
+    host = {
+      home = {
+        applications = {
+          hyprpicker.enable = true;
+          playerctl.enable = true;
+          rofi.enable = true;
+        };
+      };
+    };
+
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
@@ -72,7 +87,7 @@ with lib;
         }
 
         gestures {
-            workspace_swipe = on
+            workspace_swipe = off
         }
 
 
@@ -117,7 +132,6 @@ with lib;
         # Startup Applications
         #exec-once = dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY
         exec-once = "~/.config/scripts/decrypt.sh"
-				exec-once = ags
         #exec-once = ferdium --ozone-platform=wayland --enable-features-WaylandWindowDecorations
         exec-once = hyprpaper
         #exec-once = nextcloud --background
