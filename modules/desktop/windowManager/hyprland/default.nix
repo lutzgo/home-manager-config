@@ -72,7 +72,7 @@ with lib;
         ## Input
         input {
           follow_mouse = 1
-          kb_layout = us
+          kb_layout = de
           kb_model =
           kb_options =
           kb_rules =
@@ -132,9 +132,9 @@ with lib;
         # Startup Applications
         #exec-once = dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY
         exec-once = "~/.config/scripts/decrypt.sh"
-        exec-once = ferdium --ozone-platform=wayland --enable-features-WaylandWindowDecorations
+        #exec-once = ferdium --ozone-platform=wayland --enable-features-WaylandWindowDecorations
         exec-once = hyprpaper
-        exec-once = nextcloud --background
+        #exec-once = nextcloud --background
         exec-once = opensnitch-ui --background
         exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
         exec      = swayidle -w timeout 600 'echo "$(date) 600" >> /tmp/swayidle.log ; swaylock -C ~/.config/swaylock/swaylock.conf -S --effect-pixelate 7' timeout 1200 'echo "$(date) 1200" >> /tmp/swayidle.log ; hyprctl dispatch dpms off' resume 'echo "$(date) resume" >> /tmp/swayidle.log ; hyprctl dispatch dpms on' before-sleep 'echo "$(date) before-sleep" >> /tmp/swayidle.log ; swaylock -C ~/.config/swaylock/swaylock.conf'
@@ -255,40 +255,40 @@ with lib;
         bind = $mainMod, down, movefocus, d
 
         ## Switch workspaces with mainMod + [0-9]
-        bind = $mainMod, KP_End, workspace, 1
-        bind = $mainMod, KP_Down, workspace, 2
-        bind = $mainMod, KP_Next, workspace, 3
-        bind = $mainMod, KP_Left, workspace, 4
-        bind = $mainMod, KP_Begin, workspace, 5
-        bind = $mainMod, KP_Right, workspace, 6
-        bind = $mainMod, KP_Home, workspace, 7
-        bind = $mainMod, KP_Up, workspace, 8
-        bind = $mainMod, KP_Prior, workspace, 9
-        #bind = $mainMod, KP_Insert, workspace, 10
+        bind = $mainMod, 1, workspace, 1
+        bind = $mainMod, 2, workspace, 2
+        bind = $mainMod, 3, workspace, 3
+        bind = $mainMod, 4, workspace, 4
+        bind = $mainMod, 5, workspace, 5
+        bind = $mainMod, 6, workspace, 6
+        bind = $mainMod, 7, workspace, 7
+        bind = $mainMod, 8, workspace, 8
+        bind = $mainMod, 9, workspace, 9
+        #bind = $mainMod, 10, workspace, 10
 
         # Move active window to a workspace with mainMod + SHIFT + [0-9]
-        bind = $mainMod SHIFT, KP_End, movetoworkspace, 1
-        bind = $mainMod SHIFT, KP_Down, movetoworkspace, 2
-        bind = $mainMod SHIFT, KP_Next, movetoworkspace, 3
-        bind = $mainMod SHIFT, KP_Left, movetoworkspace, 4
-        bind = $mainMod SHIFT, KP_Begin, movetoworkspace, 5
-        bind = $mainMod SHIFT, KP_Right, movetoworkspace, 6
-        bind = $mainMod SHIFT, KP_Home, movetoworkspace, 7
-        bind = $mainMod SHIFT, KP_Up, movetoworkspace, 8
-        bind = $mainMod SHIFT, KP_Prior, movetoworkspace, 9
-        #bind = $mainMod SHIFT, KP_Insert, movetoworkspace, 10
+        bind = $mainMod SHIFT, 1, movetoworkspace, 1
+        bind = $mainMod SHIFT, 2, movetoworkspace, 2
+        bind = $mainMod SHIFT, 3, movetoworkspace, 3
+        bind = $mainMod SHIFT, 4, movetoworkspace, 4
+        bind = $mainMod SHIFT, 5, movetoworkspace, 5
+        bind = $mainMod SHIFT, 6, movetoworkspace, 6
+        bind = $mainMod SHIFT, 7, movetoworkspace, 7
+        bind = $mainMod SHIFT, 8, movetoworkspace, 8
+        bind = $mainMod SHIFT, 9, movetoworkspace, 9
+        #bind = $mainMod SHIFT, 10, movetoworkspace, 10
 
         ## moving windows to other workspaces (silent)
-        bind = $mainMod ALT, KP_End, movetoworkspacesilent,1
-        bind = $mainMod ALT, KP_Down, movetoworkspacesilent,2
-        bind = $mainMod ALT, KP_Next, movetoworkspacesilent,3
-        bind = $mainMod ALT, KP_Left, movetoworkspacesilent,4
-        bind = $mainMod ALT, KP_Begin, movetoworkspacesilent,5
-        bind = $mainMod ALT, KP_Right, movetoworkspacesilent,6
-        bind = $mainMod ALT, KP_Home, movetoworkspacesilent,7
-        bind = $mainMod ALT, KP_Up, movetoworkspacesilent,8
-        bind = $mainMod ALT, KP_Prior, movetoworkspacesilent,9
-        #bind = $mainMod ALT, KP_Insert, movetoworkspacesilent,0
+        bind = $mainMod ALT, 1, movetoworkspacesilent,1
+        bind = $mainMod ALT, 2, movetoworkspacesilent,2
+        bind = $mainMod ALT, 3, movetoworkspacesilent,3
+        bind = $mainMod ALT, 4, movetoworkspacesilent,4
+        bind = $mainMod ALT, 5, movetoworkspacesilent,5
+        bind = $mainMod ALT, 6, movetoworkspacesilent,6
+        bind = $mainMod ALT, 7, movetoworkspacesilent,7
+        bind = $mainMod ALT, 8, movetoworkspacesilent,8
+        bind = $mainMod ALT, 9, movetoworkspacesilent,9
+        #bind = $mainMod ALT, 10, movetoworkspacesilent,0
 
         ##
         bind = SUPERSHIFT,left,movewindow,l
