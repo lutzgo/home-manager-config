@@ -53,7 +53,7 @@ with lib;
       };
     };
 
-    wayland.windowManager.sweetHyprland = {
+    wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
       extraConfig = ''
