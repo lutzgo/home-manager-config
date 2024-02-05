@@ -57,7 +57,7 @@ with lib;
       enable = true;
       xwayland.enable = true;
       extraConfig = ''
-        source=~/src/home/dotfiles/hypr/hyprland.conf
+        #source=~/src/home/dotfiles/hypr/hyprland.conf
 
         # Hardware
 
