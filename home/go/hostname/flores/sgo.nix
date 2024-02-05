@@ -18,7 +18,7 @@
         gui = {
           enable = true;
           displayServer = "wayland";
-					windowManager = "gnome";
+					windowManager = "hyprland";
         };
         theming.enable = true;
       };
