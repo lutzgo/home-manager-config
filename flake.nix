@@ -83,7 +83,7 @@
       }) //
       {
         homeConfigurations = {
-          "flores.ireen" = HomeConfiguration {
+          "flores.sgo" = HomeConfiguration {
             extraSpecialArgs = {
               org = "toi";
               role = "workstation";
@@ -91,7 +91,7 @@
               username = "ireen";
               displays = 2;
               display_center = "eDP";
-	      display_right = "HDMI-A-O";
+	            display_right = "HDMI-A-O";
               networkInterface = "wlp0s20f3";
               inherit inputs outputs;
             };
