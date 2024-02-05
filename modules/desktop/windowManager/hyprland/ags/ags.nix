@@ -5,5 +5,5 @@
     (python311.withPackages (p: [ p.python-pam ]))
   ];
 
-  xdg.configFile.ags.source = ../../../../dotfiles/ags;
+  xdg.configFile.ags.source = ../../../../../dotfiles/ags;
 }
