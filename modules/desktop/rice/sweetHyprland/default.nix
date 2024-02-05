@@ -2,6 +2,7 @@
 let
   displayServer = config.host.home.feature.gui.displayServer ;
   windowManager = config.host.home.feature.gui.windowManager ;
+  rice = config.host.home.feature.gui.rice ;
 
   gameMode = pkgs.writeShellScriptBin "gamemode" ''
     HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==2{print $2}')
