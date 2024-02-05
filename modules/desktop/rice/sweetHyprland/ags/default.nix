@@ -8,7 +8,7 @@
     enable = true;
   };
 
-  configDir = ../ags;
+  #configDir = ../ags;
 
   home = {
     packages = with pkgs; [
