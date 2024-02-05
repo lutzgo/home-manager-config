@@ -25,7 +25,7 @@ in
 
   config = mkIf cfg.enable {
     xdg.mime.enable = true ;
-    xdg.mimeApps = mkIf (username == "dave") {
+    xdg.mimeApps = mkIf (username == "lgo") {
       enable = true;
       defaultApplications = {
         #"application/bzip2" = archives;

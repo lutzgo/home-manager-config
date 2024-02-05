@@ -48,7 +48,7 @@ in with lib; {
       enable = true;
       package = if pkgs.stdenv.isLinux then pkgs.firefox else pkgs.firefox-bin;
       profiles = {
-        dave = mkIf (username == "dave" || username == "media") {
+        lgo = mkIf (username == "lgo" || username == "media") {
           name = username;
           #id = 777;
           isDefault = true;
@@ -3011,7 +3011,7 @@ in with lib; {
 
           userContent = "\n";
         };
-        ireen = mkIf (username == "ireen") {
+        sgo = mkIf (username == "sgo") {
           name = username;
           #id = 777;
           isDefault = true;

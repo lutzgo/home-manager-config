@@ -18,14 +18,14 @@ with lib;
    let
      mkStartScript = name: pkgs.writeShellScript "${name}.sh" ''
        #set -uo pipefail
-       if [ -d $HOME/Nextcloud/TOI/.encfs ] ; then
+       if [ -d $HOME/Nextcloud/GO/.encfs ] ; then
          if ${pkgs.gnugrep}/bin/grep -qs "$HOME/Documents/Workspace" /proc/mounts; then
            echo "WARN Skipping encfs 'workspace' as it's already mounted"
          else
            if [ -f "$XDG_RUNTIME_DIR/secrets/encfs/workspace" ] ; then
              echo "INFO Mounting encfs 'workspace'"
              ${pkgs.coreutils}/bin/mkdir -p $HOME/Documents/Workspace
-             ${pkgs.coreutils}/bin/cat "$XDG_RUNTIME_DIR/secrets/encfs/workspace" | /run/wrappers/bin/sudo ${pkgs.encfs}/bin/encfs --public -S -f "$HOME/Nextcloud/TOI/.encfs" "$HOME/Documents/Workspace"
+             ${pkgs.coreutils}/bin/cat "$XDG_RUNTIME_DIR/secrets/encfs/workspace" | /run/wrappers/bin/sudo ${pkgs.encfs}/bin/encfs --public -S -f "$HOME/Nextcloud/GO/.encfs" "$HOME/Documents/Workspace"
            else
              echo "ERROR Can't mount encfs 'workspace' as 'encfs_workspace' secret doesn't exist"
            fi
@@ -49,7 +49,7 @@ with lib;
 
      sops.secrets = {
        "encfs/workspace" = {
-         sopsFile =  ../../home/toi/secrets/encfs_workspace.yaml ;
+         sopsFile =  ../../home/go/secrets/encfs_workspace.yaml ;
        };
      };
   };

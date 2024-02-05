@@ -3,7 +3,8 @@
 with lib;
 {
   imports = [
-    #./gnome
-		./hyprland
+		./cinnamon
+    ./hyprland
+		./sway
   ];
 }

@@ -20,6 +20,8 @@
           displayServer = "wayland";
 					windowManager = "hyprland";
         };
+				fonts.enable = true;
+				mime-defaults.enable = true;
         theming.enable = true;
       };
       service = {
