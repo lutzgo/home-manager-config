@@ -34,7 +34,7 @@ with lib;
       };
       
 			rice = mkOption {
-        type = types.enum ["sweet-hyprland" ];
+        type = types.enum ["sweetHyprland" ];
         default = null;
         description = "Choose your rice according to taste";
       };
