@@ -10,7 +10,6 @@ with lib;
     ./apps
     ./displayServer
     ./windowManager
-		./rice
   ];
 
   options = {
