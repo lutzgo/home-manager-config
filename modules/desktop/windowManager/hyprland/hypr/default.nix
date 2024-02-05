@@ -57,7 +57,7 @@ with lib;
       enable = true;
       xwayland.enable = true;
       extraConfig = ''
-        #source=~/src/home/dotfiles/hypr/hyprland.conf
+        source=~/src/home/dotfiles/hypr/hyprland.conf
 
         # Hardware
 
@@ -133,17 +133,20 @@ with lib;
         #exec-once = dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY
         exec-once = "~/.config/scripts/decrypt.sh"
         #exec-once = ferdium --ozone-platform=wayland --enable-features-WaylandWindowDecorations
-        exec-once = hyprpaper
-        exec-once = nextcloud --background
+        #exec-once = hyprpaper
+        #exec-once = nextcloud --background
         exec-once = opensnitch-ui --background
         exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
         exec      = swayidle -w timeout 600 'echo "$(date) 600" >> /tmp/swayidle.log ; swaylock -C ~/.config/swaylock/swaylock.conf -S --effect-pixelate 7' timeout 1200 'echo "$(date) 1200" >> /tmp/swayidle.log ; hyprctl dispatch dpms off' resume 'echo "$(date) resume" >> /tmp/swayidle.log ; hyprctl dispatch dpms on' before-sleep 'echo "$(date) before-sleep" >> /tmp/swayidle.log ; swaylock -C ~/.config/swaylock/swaylock.conf'
         exec      = swayosd --display=HDMI-A-1
         exec-once = swaync
-        exec-once = waybar
+        exec-once = ags -b hyprland
         exec-once = wl-gammarelay-rs
 
         ## Application Window Rules
+				# Shell
+				windowrule = float, ^(ags)$
+
         #windowrule=float,*(zoom)*
         windowrule=float,^(pavucontrol)$
         windowrule=float,^(virt-manager)$
@@ -335,6 +338,14 @@ with lib;
         exec-once = wl-paste --type text --watch cliphist store #Stores only text data
         exec-once = wl-paste --type image --watch cliphist store #Stores only image data
         bind = SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy
+
+				## AGS
+				# AGS
+				bind = CTRL SHIFT, R, exec, ags -b hyprland quit; ags -b hyprland
+				bind = SUPER, x, exec, ags -b hyprland toggle-window overview
+				bind = , XF86PowerOff, exec, ags -b hyprland toggle-window powermenu
+				bind = SUPER, R, exec, ags -b hyprland toggle-window applauncher 
+				bind  = , XF86Launch4, exec, ags -b hyprland -r "recorder.start()"
       '';
     };
 
